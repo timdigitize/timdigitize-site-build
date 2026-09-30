@@ -41,8 +41,20 @@ try {
     }
     Log "Yeni surum: $sha (mevcut: $(if ($current) { $current } else { 'yok' }))"
 
-    $work = Join-Path $Ops ('work-' + $sha.Substring(0, 7))
-    if (Test-Path $work) { Remove-Item $work -Recurse -Force }
+    # Betik kendini gunceller (bir sonraki calismada devreye girer)
+    try {
+        $selfUrl = "https://raw.githubusercontent.com/$Repo/$Branch/ops/deploy-site.ps1"
+        $latest = (Invoke-WebRequest -Uri $selfUrl -UseBasicParsing -Headers $headers -TimeoutSec 30).Content
+        $mine = Get-Content $PSCommandPath -Raw
+        if ($latest -and $latest.Length -gt 1000 -and $latest.Trim() -ne $mine.Trim()) {
+            [IO.File]::WriteAllText($PSCommandPath, $latest, (New-Object Text.UTF8Encoding $false))
+            Log 'deploy-site.ps1 guncellendi (yeni surum bir sonraki calismada gecerli)'
+        }
+    } catch { Log "Betik guncelleme atlandi: $($_.Exception.Message)" }
+
+    # Calisma klasoru: sha + zaman damgasi (ayni surum icin es zamanli iki calisma cakismasin)
+    Get-ChildItem $Ops -Directory -Filter 'work-*' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime -lt (Get-Date).AddHours(-2) } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+    $work = Join-Path $Ops ('work-' + $sha.Substring(0, 7) + '-' + (Get-Date -Format 'HHmmss') + '-' + $PID)
     New-Item -ItemType Directory -Force -Path $work | Out-Null
     $zip = Join-Path $work 'site.zip'
 
