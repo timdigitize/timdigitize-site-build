@@ -1,0 +1,82 @@
+/**
+ * Field Hub gate — newsletter subscribe wall for all /tools/* pages.
+ *
+ * Flow:
+ *  1. On load: if localStorage has the flag → do nothing (returning subscriber).
+ *  2. Otherwise show the modal, lock scroll, blur page content.
+ *  3. Valid email + submit → POST to Mailchimp via hidden iframe (no redirect),
+ *     set the flag, unlock immediately. We don't wait for Mailchimp's response:
+ *     losing one farmer at the gate costs more than a rare failed POST.
+ *
+ * GA4 events (if gtag): field_hub_gate_view, field_hub_subscribe.
+ */
+(function () {
+  'use strict';
+
+  var KEY = 'tim_fieldhub_ok';
+  var gate = document.getElementById('fieldGate');
+  if (!gate) return;
+
+  try {
+    if (window.localStorage && localStorage.getItem(KEY)) return;
+  } catch (e) {
+    return; // storage blocked (private mode edge) → don't wall content forever
+  }
+
+  function ga(name, params) {
+    if (typeof window.gtag === 'function') {
+      try { window.gtag('event', name, params || {}); } catch (e) {}
+    }
+  }
+
+  var form = gate.querySelector('[data-gate-form]');
+  var email = gate.querySelector('#gate-email');
+  var errEl = gate.querySelector('#gate-error');
+  var openedAt = Date.now(); // bot tuzağı: insan 3 sn'den önce e-posta yazamaz
+
+  function open() {
+    gate.hidden = false;
+    document.body.classList.add('gate-locked');
+    ga('field_hub_gate_view', { page_path: location.pathname });
+    // Focus after paint so screen readers land on the dialog
+    window.setTimeout(function () { email.focus(); }, 150);
+  }
+
+  function unlock() {
+    gate.hidden = true;
+    document.body.classList.remove('gate-locked');
+  }
+
+  function validEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  }
+
+  form.addEventListener('submit', function (e) {
+    var v = (email.value || '').trim();
+    if (Date.now() - openedAt < 3000) { e.preventDefault(); return; }
+    if (!validEmail(v)) {
+      e.preventDefault();
+      errEl.hidden = false;
+      email.classList.add('gate-input-error');
+      email.focus();
+      return;
+    }
+    // Let the native POST go to the hidden iframe; unlock right away.
+    try { localStorage.setItem(KEY, v); } catch (err) {}
+    ga('field_hub_subscribe', { page_path: location.pathname });
+    if (window.TimMetaPixel) {
+      window.TimMetaPixel.track('CompleteRegistration', {
+        content_name: 'Field Hub Gate',
+        content_category: location.pathname
+      });
+    }
+    window.setTimeout(unlock, 120);
+  });
+
+  email.addEventListener('input', function () {
+    errEl.hidden = true;
+    email.classList.remove('gate-input-error');
+  });
+
+  open();
+})();

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" data-ga-id="G-BZXYRPTQZM" data-fb-id="2312239636234112">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="facebook-domain-verification" content="31du2mdtzbu7afj9hg4d28kg9scfan" />
+  <meta name="theme-color" content="#0A1628">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.instagram.com https://connect.facebook.net https://*.list-manage.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com https://img.youtube.com https://i.ytimg.com https://*.cdninstagram.com https://*.fbcdn.net https://maps.googleapis.com https://maps.gstatic.com https://*.googleusercontent.com https://*.gstatic.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com https://www.instagram.com; connect-src 'self' https://connect.facebook.net https://www.facebook.com https://api.open-meteo.com https://*.google-analytics.com https://www.googletagmanager.com https://www.google.com; form-action 'self' https://*.list-manage.com; base-uri 'self'; object-src 'none'">
+  <title>Calculadora de Boquillas — Centro de Campo | Tim</title>
+  <meta name="description" content="Calcula el caudal requerido por boquilla según velocidad, ancho de barra, espaciado y dosis objetivo.">
+  <meta name="keywords" content="agricultura de precisión, controlador de dosis, computadora de pulverizadora, GNSS, control automático de secciones, agricultura digital">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es">
+  <meta property="og:title" content="Calculadora de Boquillas — Centro de Campo | Tim">
+  <meta property="og:description" content="Calcula el caudal requerido por boquilla según velocidad, ancho de barra, espaciado y dosis objetivo.">
+  <meta property="og:url" content="https://timdigitize.com/tools/nozzle/">
+  <meta property="og:image" content="https://timdigitize.com/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Tim Digitize">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de Boquillas — Centro de Campo | Tim">
+  <meta name="twitter:description" content="Calcula el caudal requerido por boquilla según velocidad, ancho de barra, espaciado y dosis objetivo.">
+
+  <link rel="canonical" href="https://timdigitize.com/es/tools/nozzle/">
+  <link rel="alternate" hreflang="en" href="https://timdigitize.com/en/tools/nozzle/">
+  <link rel="alternate" hreflang="tr" href="https://timdigitize.com/tr/tools/nozzle/">
+  <link rel="alternate" hreflang="es" href="https://timdigitize.com/es/tools/nozzle/">
+  <link rel="alternate" hreflang="pt" href="https://timdigitize.com/pt/tools/nozzle/">
+  <link rel="alternate" hreflang="it" href="https://timdigitize.com/it/tools/nozzle/">
+  <link rel="alternate" hreflang="de" href="https://timdigitize.com/de/tools/nozzle/">
+  <link rel="alternate" hreflang="ru" href="https://timdigitize.com/ru/tools/nozzle/">
+  <link rel="alternate" hreflang="fr" href="https://timdigitize.com/fr/tools/nozzle/">
+  <link rel="alternate" hreflang="ar" href="https://timdigitize.com/ar/tools/nozzle/">
+  <link rel="alternate" hreflang="bg" href="https://timdigitize.com/bg/tools/nozzle/">
+  <link rel="alternate" hreflang="el" href="https://timdigitize.com/el/tools/nozzle/">
+  <link rel="alternate" hreflang="x-default" href="https://timdigitize.com/en/tools/nozzle/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/main.css?v=1790758779">
+
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico?v=1790758779">
+  <link rel="icon" type="image/svg+xml" href="/static/images/favicon.svg?v=1790758779">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32.png?v=1790758779">
+  <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon-96.png?v=1790758779">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon-192.png?v=1790758779">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png?v=1790758779">
+  <meta name="theme-color" content="#0A1628">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tim",
+    "legalName": "Tim Dijital Teknolojiler A.Ş.",
+    "url": "https://timdigitize.com",
+    "logo": "https://timdigitize.com/static/images/logo.svg",
+    "sameAs": [
+      "https://instagram.com/timsantarim",
+      "https://instagram.com/timdigitize",
+      "https://instagram.com/timdigitize_tr",
+      "https://youtube.com/@timsantarim",
+      "https://linkedin.com/company/timsan-tarim",
+      "https://timsantarim.com"
+    ],
+    "description": "Ordenadores de pulverización y control de dosificación, sistemas GNSS y aplicación inteligente — ingeniería Tim para pulverizadores y abonadoras.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Esenşehir Mah., Haseki Sok., No: 20/2, Ümraniye - İstanbul / Türkiye",
+      "addressLocality": "Ümraniye, İstanbul",
+      "addressCountry": "Türkiye"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+90 216 499 71 90",
+      "email": "info@timdigitize.com",
+      "contactType": "Sales"
+    }
+  }
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Tim", "item": "https://timdigitize.com/es/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de Campo", "item": "https://timdigitize.com/es/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Calculadora de Boquillas"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Boquillas",
+  "url": "https://timdigitize.com/es/tools/nozzle/",
+  "description": "Calcula el caudal requerido por boquilla según velocidad, ancho de barra, espaciado y dosis objetivo.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tim Digitize",
+    "url": "https://timdigitize.com"
+  }
+}
+</script>
+</head>
+<body >
+  <a class="skip-link" href="#icerik">Saltar al contenido</a>
+<header class="header">
+  <div class="container header-inner">
+    <a href="/es/" class="logo" aria-label="Tim Digitize home">
+      <img src="/static/images/tim-logo.png" alt="Tim — Digitizing Equipment" class="logo-mark" width="2560" height="1440">
+      <span class="sr-only">Tim Digitize</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <ul style="display: flex; align-items: center; gap: 1.25rem; list-style: none; flex-wrap: nowrap;">
+        <li><a href="/es/products/" >Productos</a></li>
+        <li><a href="/es/shop/" >Tienda</a></li>
+        <li><a href="/es/tools/" class="active">Centro de Campo</a></li>
+        <li><a href="/es/compare/" >Comparar</a></li>
+        <li><a href="/es/case-studies/" >Operaciones de clientes</a></li>
+        <li><a href="/es/blog/" >Blog</a></li>
+        <li><a href="/es/about/" >Sobre nosotros</a></li>
+        <li><a href="/es/contact/" >Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <div class="lang-switcher">
+        <button class="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span>Español</span>
+          <svg viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li>
+            <a href="/en/tools/nozzle/" >
+              <span>🇬🇧</span>
+              <span>English</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tr/tools/nozzle/" >
+              <span>🇹🇷</span>
+              <span>Türkçe</span>
+            </a>
+          </li>
+          <li>
+            <a href="/es/tools/nozzle/" class="active">
+              <span>🇪🇸</span>
+              <span>Español</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pt/tools/nozzle/" >
+              <span>🇵🇹</span>
+              <span>Português</span>
+            </a>
+          </li>
+          <li>
+            <a href="/it/tools/nozzle/" >
+              <span>🇮🇹</span>
+              <span>Italiano</span>
+            </a>
+          </li>
+          <li>
+            <a href="/de/tools/nozzle/" >
+              <span>🇩🇪</span>
+              <span>Deutsch</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ru/tools/nozzle/" >
+              <span>🇷🇺</span>
+              <span>Русский</span>
+            </a>
+          </li>
+          <li>
+            <a href="/fr/tools/nozzle/" >
+              <span>🇫🇷</span>
+              <span>Français</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ar/tools/nozzle/" >
+              <span>🇸🇦</span>
+              <span>العربية</span>
+            </a>
+          </li>
+          <li>
+            <a href="/bg/tools/nozzle/" >
+              <span>🇧🇬</span>
+              <span>Български</span>
+            </a>
+          </li>
+          <li>
+            <a href="/el/tools/nozzle/" >
+              <span>🇬🇷</span>
+              <span>Ελληνικά</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <a href="/es/contact/" class="btn btn-primary btn-sm">Contacto</a>
+
+      <button class="mobile-toggle" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+  <main id="icerik">
+
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow eyebrow-split"><a href="/es/tools/" style="color: inherit;">Herramientas de Campo</a><span class="eyebrow-sep">·</span><span class="eyebrow-sub">Caudal por boquilla</span></p>
+    <h1>Calculadora de Boquillas</h1>
+    <p>Calcula el caudal requerido por boquilla según velocidad, ancho de barra, espaciado y dosis objetivo.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <form id="tool-form" class="tool-calc" data-tool="nozzle" onsubmit="return false;">
+      <div class="tool-inputs">
+
+        <div class="seg-row">
+          <div class="seg-toggle" id="noz-mode" role="tablist">
+            <button type="button" class="seg-btn active" data-mode="field">🌾 Campo</button>
+            <button type="button" class="seg-btn" data-mode="orchard">🌳 Huerto</button>
+          </div>
+          <div class="seg-toggle seg-toggle-sm" id="noz-unit" data-default-unit="ha">
+            <button type="button" class="seg-btn" data-unit="ha">L/ha</button>
+            <button type="button" class="seg-btn" data-unit="da">lt/decárea</button>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="speed">Velocidad del tractor (km/h)</label>
+          <input type="number" id="speed" min="0.5" max="30" step="0.1" value="8">
+          <input type="range" class="input-slider" data-for="speed" min="2" max="20" step="0.5" value="8" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <div class="input-group" data-show-mode="field">
+          <label for="boom-width">Ancho de barra (m)</label>
+          <input type="number" id="boom-width" min="1" max="48" step="0.5" value="24">
+          <input type="range" class="input-slider" data-for="boom-width" min="6" max="36" step="1" value="24" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <div class="input-group" data-show-mode="orchard" hidden>
+          <label for="row-spacing">Distancia entre hileras (m)</label>
+          <input type="number" id="row-spacing" min="1" max="12" step="0.25" value="3">
+          <input type="range" class="input-slider" data-for="row-spacing" min="1" max="8" step="0.25" value="3" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <div class="input-group" data-show-mode="field">
+          <div class="seg-toggle seg-toggle-sm" id="noz-inputmode">
+            <button type="button" class="seg-btn active" data-inputmode="spacing">Ingresar espaciado</button>
+            <button type="button" class="seg-btn" data-inputmode="count">Ingresar cantidad</button>
+          </div>
+        </div>
+
+        <div class="input-group" data-show-mode="field" data-show-inputmode="spacing">
+          <label for="spacing">Espaciado de boquillas (cm)</label>
+          <input type="number" id="spacing" min="10" max="100" step="5" value="50">
+          <input type="range" class="input-slider" data-for="spacing" min="25" max="75" step="5" value="50" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <div class="input-group" data-show-mode="field" data-show-inputmode="count" hidden>
+          <label for="nozzle-count-in">Cantidad de boquillas</label>
+          <input type="number" id="nozzle-count-in" min="2" max="96" step="1" value="48">
+          <input type="range" class="input-slider" data-for="nozzle-count-in" min="12" max="72" step="1" value="48" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <div class="input-group" data-show-mode="orchard" hidden>
+          <label for="nozzle-count-orch">Cantidad de boquillas</label>
+          <input type="number" id="nozzle-count-orch" min="2" max="32" step="1" value="12">
+          <input type="range" class="input-slider" data-for="nozzle-count-orch" min="4" max="24" step="1" value="12" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <div class="input-group">
+          <label for="rate" id="rate-label" data-label-ha="Dosis (L/ha)" data-label-da="Dosis por decárea (lt/da)">Dosis (L/ha)</label>
+          <input type="number" id="rate" min="1" step="1" value="200">
+          <input type="range" class="input-slider" data-for="rate" min="50" max="600" step="10" value="200" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <p class="noz-hint" data-show-mode="orchard" hidden>En modo huerto, el caudal del atomizador se calcula según la distancia entre hileras.</p>
+        <p class="noz-gps-tip">🛰️ <a href="/es/tools/gps-speed/">El tablero del tractor puede engañar — verifica tu velocidad real con el Medidor GPS.</a></p>
+
+
+      </div>
+
+      <div class="tool-results">
+        <h3>Resultados</h3>
+
+        <div class="tool-result-primary">
+          <span class="tool-result-value" id="r-flow-per-nozzle">—</span>
+          <span class="tool-result-unit">L/min</span>
+        </div>
+        <div class="tool-result-label">Caudal por boquilla</div>
+
+        <div class="tool-result-breakdown">
+          <div class="tool-line"><span>Caudal total de barra</span><span id="r-total-flow">—</span></div>
+          <div class="tool-line"><span>Número de boquillas</span><span id="r-nozzle-count">—</span></div>
+          <div class="tool-line" id="r-spacing-row" hidden><span>Espaciado de boquillas</span><span id="r-spacing-out">—</span></div>
+          <div class="tool-line" id="r-rateha-row" hidden><span>Equivalente por ha</span><span id="r-rate-ha">—</span></div>
+        </div>
+
+        <div id="iso-section" class="iso-section" style="display: none;">
+          <div class="iso-head">
+            <p class="eyebrow">Estándar ISO 10625</p>
+            <h4>Boquilla recomendada</h4>
+          </div>
+
+          <div id="iso-reco" class="iso-reco">
+            <div class="iso-reco-swatch" data-iso-swatch aria-hidden="true">015</div>
+            <div class="iso-reco-body">
+              <div class="iso-reco-color"><span data-iso-color>—</span></div>
+              <div class="iso-reco-meta">
+                <span>Flujo de referencia: <strong data-iso-flow>—</strong> L/min @ 3 bar</span>
+                <span class="iso-reco-sep">·</span>
+                <span>Presión requerida: <strong data-iso-required-pressure>—</strong> bar</span>
+              </div>
+              <div id="iso-status" class="iso-status">—</div>
+            </div>
+          </div>
+
+          <details class="iso-chart-details">
+            <summary>Tabla completa de colores ISO</summary>
+            <div id="iso-chart" class="iso-chart" role="table" aria-label="Tabla completa de colores ISO">
+              <!-- Rows populated by JS -->
+            </div>
+            <p class="iso-note">ISO 10625 estandariza los códigos de color de boquillas entre fabricantes. El flujo de referencia se mide a 3 bar. La presión requerida se calcula usando la ley de flujo de raíz cuadrada.</p>
+          </details>
+        </div>
+
+        <script>
+          window.ISO_I18N = {
+            colors: {
+              orange: "Naranja",
+              green: "Verde",
+              yellow: "Amarillo",
+              blue: "Azul",
+              red: "Rojo",
+              brown: "Marr\u00f3n",
+              grey: "Gris",
+              white: "Blanco",
+              lightBlue: "Azul claro",
+              lightGreen: "Verde claro",
+              black: "Negro"
+            },
+            status: {
+              ideal: "Presi\u00f3n de operaci\u00f3n ideal (2\u20134 bar)",
+              acceptable: "Presi\u00f3n aceptable (1,5\u20135 bar)",
+              tooLow: "Presi\u00f3n muy baja \u2014 prueba boquilla m\u00e1s peque\u00f1a",
+              tooHigh: "Presi\u00f3n muy alta \u2014 prueba boquilla m\u00e1s grande"
+            }
+          };
+        </script>
+
+
+        <p class="tool-formula">Fórmula: L/min = (L/ha × km/h × espaciado[m]) / 600</p>
+      </div>
+    </form>
+
+
+    <div class="tool-crosssell-multi">
+      <div class="tool-crosssell-head">
+        <p class="eyebrow">Automatízalo con Tim</p>
+        <p class="lead">¿Quieres este cálculo en tiempo real en tu tractor? Los controladores Tim lo hacen automáticamente.</p>
+      </div>
+      <div class="tool-crosssell-grid">
+        <a href="/es/products/nova-100/" class="tool-crosssell tool-crosssell-card">
+          <div class="tool-crosssell-image">
+            <img src="/static/images/products/nova-100.png" alt="Nova 100" loading="lazy">
+          </div>
+          <div class="tool-crosssell-body">
+            <h3>Nova 100</h3>
+            <p class="tool-crosssell-tagline">Computadora de Control de Dosis</p>
+            <span class="card-action">Ver producto</span>
+          </div>
+        </a>
+        <a href="/es/products/nova-200/" class="tool-crosssell tool-crosssell-card">
+          <div class="tool-crosssell-image">
+            <img src="/static/images/products/nova-200.png" alt="Nova 200" loading="lazy">
+          </div>
+          <div class="tool-crosssell-body">
+            <h3>Nova 200</h3>
+            <p class="tool-crosssell-tagline">Control Automático de Secciones + GNSS</p>
+            <span class="card-action">Ver producto</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <h2>¿Listo para digitalizar tu operación?</h2>
+    <p>Hable con nuestro equipo agronómico sobre su operación: le responderemos en un día laborable.</p>
+    <a href="/es/contact/" class="btn btn-accent btn-lg btn-arrow">Contáctenos</a>
+  </div>
+</section>
+
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/static/images/tim-logo-green.png" alt="Tim" width="2560" height="1440" style="height: 56px; width: auto; margin-bottom: 1rem;">
+        <p>Agricultura digital, con ingeniería.</p>
+
+        <h4>Mantente al día</h4>
+        <p style="font-size: 0.875rem; margin-bottom: 1rem;">Actualizaciones trimestrales sobre nuevos productos, firmware y casos de estudio. Sin spam.</p>
+        <form class="footer-newsletter mc-form" action="https://timdigitize.us22.list-manage.com/subscribe/post?u=a1437c828d79c03443d33ae10&amp;id=aceeeb69fb&amp;f_id=008dc2e1f0" method="POST" target="_blank" novalidate>
+          <input type="email" name="EMAIL" placeholder="tu@email.com" required aria-label="Email">
+          <input type="hidden" name="MMERGE14" value="newsletter-footer">
+          <div style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;" aria-hidden="true">
+            <input type="text" name="b_a1437c828d79c03443d33ae10_aceeeb69fb" tabindex="-1" value="">
+          </div>
+          <button type="submit" name="subscribe">Suscribirse</button>
+        </form>
+
+        <div class="footer-social">
+<a href="https://instagram.com/timdigitize" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://youtube.com/timsantarim" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/timsan-tarim" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="/es/products/nova-100/">Nova 100</a></li>
+          <li><a href="/es/products/nova-110/">Nova 110</a></li>
+          <li><a href="/es/products/nova-130/">Nova 130</a></li>
+          <li><a href="/es/products/nova-200/">Nova 200</a></li>
+          <li><a href="/es/products/nova-210/">Nova 210</a></li>
+          <li><a href="/es/products/nova-2n/">Nova 2N</a></li>
+          <li><a href="/es/products/">Ver todo</a></li>
+          <li><a href="/es/shop/">Tienda →</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/es/about/">Sobre nosotros</a></li>
+          <li><a href="/es/case-studies/">Operaciones de clientes</a></li>
+          <li><a href="/es/contact/">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="/es/tools/">Centro de Campo</a></li>
+          <li><a href="/es/blog/">Blog</a></li>
+          <li><a href="/es/tools/#resources">Recursos</a></li>
+          <li><a href="/es/compare/">Comparar</a></li>
+          <li><a href="https://timsantarim.com" target="_blank" rel="noopener">timsantarim.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        <p>© <span id="current-year">2026</span> Tim Dijital Teknolojiler A.Ş. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="/es/privacy/">Privacidad</a>
+        <a href="/es/terms/">Términos</a>
+        <a href="/es/cookies/">Cookies</a>
+      </div>
+    </div>
+  </div>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</footer><nav class="mobile-nav" aria-label="Mobile">
+  <ul>
+    <li><a href="/es/products/">Productos</a></li>
+    <li><a href="/es/shop/">Tienda</a></li>
+    <li><a href="/es/tools/">Centro de Campo</a></li>
+    <li><a href="/es/compare/">Comparar</a></li>
+    <li><a href="/es/case-studies/">Operaciones de clientes</a></li>
+    <li><a href="/es/blog/">Blog</a></li>
+    <li><a href="/es/about/">Sobre nosotros</a></li>
+    <li><a href="/es/contact/">Contacto</a></li>
+  </ul>
+  <a href="/es/contact/" class="btn btn-accent btn-lg">Contacto</a>
+</nav><a
+  href="https://wa.me/905331580055?text=%C2%A1Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20productos%20Tim."
+  class="whatsapp-fab"
+  aria-label="Habla con nosotros por WhatsApp"
+  target="_blank"
+  rel="noopener"
+  data-tooltip="Respuesta el mismo día · WhatsApp"
+  data-fb-event="Contact"
+  data-fb-label="WhatsApp FAB">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/>
+  </svg>
+</a>
+<div id="cookie-consent" class="cookie-consent" hidden role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-message">
+  <div class="container cookie-consent-inner">
+    <div class="cookie-consent-text">
+      <strong id="cookie-consent-title">Usamos cookies</strong>
+      <p id="cookie-consent-message">
+        Usamos cookies funcionales para que el sitio funcione y analítica anónima para mejorarlo. Puedes aceptar todo, solo esenciales, o personalizar.
+        <a href="/es/cookies/">Saber más</a>
+      </p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-action="essential">Solo esenciales</button>
+      <button type="button" class="btn btn-primary btn-sm" data-cookie-action="all">Aceptar todo</button>
+    </div>
+  </div>
+</div><div class="gate-modal" id="fieldGate" role="dialog" aria-modal="true" aria-labelledby="fieldGateTitle" hidden>
+  <div class="gate-backdrop"></div>
+  <div class="gate-panel" role="document">
+    <div class="gate-icon" aria-hidden="true">🌾</div>
+    <h2 id="fieldGateTitle">Bienvenido al Centro de Campo</h2>
+    <p class="gate-body">Las calculadoras, Nova Support y todos los documentos son gratuitos. Solo pedimos tu correo: te avisaremos de nuevas herramientas y actualizaciones. Sin spam, prometido.</p>
+
+    <form class="gate-form"
+          action="https://timdigitize.us22.list-manage.com/subscribe/post?u=a1437c828d79c03443d33ae10&amp;id=aceeeb69fb&amp;f_id=008dc2e1f0"
+          method="POST"
+          target="gate-mc-iframe"
+          data-gate-form
+          novalidate>
+      <input type="hidden" name="MMERGE14" value="field-hub-gate-es">
+      <input type="hidden" name="MMERGE10" value="field-hub">
+
+      <div class="gate-row">
+        <label for="gate-email" class="sr-only">Tu correo electrónico</label>
+        <input type="email" id="gate-email" name="EMAIL" placeholder="Tu correo electrónico" required
+               data-invalid-msg="Introduce un correo electrónico válido.">
+        <button type="submit" class="btn btn-accent">Suscribirse y entrar</button>
+      </div>
+      <p class="gate-error" id="gate-error" hidden>Introduce un correo electrónico válido.</p>
+
+      <div style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;" aria-hidden="true">
+        <input type="text" name="b_a1437c828d79c03443d33ae10_aceeeb69fb" tabindex="-1" value="">
+      </div>
+
+      <p class="gate-note">Un boletín breve cada trimestre. Cancela cuando quieras.</p>
+    </form>
+
+    <iframe name="gate-mc-iframe" style="display:none;" aria-hidden="true" tabindex="-1"></iframe>
+  </div>
+</div>
+  <script src="/static/js/main.js?v=1790758779" defer></script>
+  <script src="/static/js/mc-forms.js?v=1790758779" defer></script>
+  <script src="/static/js/wa-ref.js?v=1790758779" defer></script>
+  <script src="/static/js/meta-pixel.js?v=1790758779" defer></script>
+  <script src="/static/js/cookie-consent.js?v=1790758779" defer></script>
+  <script src="/static/js/youtube-lite.js?v=1790758779" defer></script>
+  <script src="/static/js/catalog-modal.js?v=1790758779" defer></script>
+<script src="/static/js/field-gate.js?v=1790758779" defer></script><script src="/static/js/calculators.js?v=1790758779" defer></script>
+</body>
+</html>

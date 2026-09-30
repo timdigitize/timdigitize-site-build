@@ -1,0 +1,142 @@
+/**
+ * Mailchimp Form Handler — Hidden Iframe Approach
+ *
+ * Why this approach:
+ *  - Mailchimp's JSONP endpoint returns text/html content-type
+ *    which some browsers refuse to execute as JS
+ *  - Hidden iframe = no CORS, no script injection, just plain form submit
+ *  - We can't read the iframe response (cross-origin) but we don't need to:
+ *    Mailchimp accepts duplicates gracefully and the submission ALWAYS reaches it
+ *  - Better UX than target="_blank" (no new tab)
+ */
+
+(function () {
+  'use strict';
+
+  function showFeedback(form, type, message) {
+    // Footer newsletter feedback goes OUTSIDE the form to avoid flex layout issues
+    const isFooter = form.classList.contains('footer-newsletter');
+
+    let feedback;
+    if (isFooter) {
+      feedback = form.parentNode.querySelector('.mc-feedback');
+      if (!feedback) {
+        feedback = document.createElement('div');
+        feedback.className = 'mc-feedback';
+        form.insertAdjacentElement('afterend', feedback);
+      }
+    } else {
+      feedback = form.querySelector('.mc-feedback');
+      if (!feedback) {
+        feedback = document.createElement('div');
+        feedback.className = 'mc-feedback';
+        const submitWrapper =
+          form.querySelector('button[type="submit"]')?.closest('.form-field') ||
+          form.lastElementChild;
+        if (submitWrapper && submitWrapper.parentNode === form) {
+          form.insertBefore(feedback, submitWrapper);
+        } else {
+          form.appendChild(feedback);
+        }
+      }
+    }
+
+    feedback.classList.remove('mc-feedback-success', 'mc-feedback-error');
+    feedback.classList.add('mc-feedback-' + type);
+    feedback.textContent = message;
+    feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function getSuccessMessage(form) {
+    // Look up i18n success message from a data attribute, or fall back
+    const lang = document.documentElement.lang || 'en';
+    const messages = {
+      en: "Thank you! We'll be in touch within 24 hours.",
+      tr: 'Teşekkürler! 24 saat içinde sizinle iletişime geçeceğiz.',
+      es: '¡Gracias! Te contactaremos en menos de 24 horas.',
+      pt: 'Obrigado! Entraremos em contato em até 24 horas.',
+      it: 'Grazie! Ti contatteremo entro 24 ore.',
+      de: 'Vielen Dank! Wir melden uns innerhalb von 24 Stunden.',
+      fr: 'Merci ! Nous vous contacterons sous 24 heures.',
+      ru: 'Спасибо! Мы свяжемся с вами в течение 24 часов.',
+      ar: 'شكرًا! سنتواصل معك خلال 24 ساعة.',
+    };
+    return messages[lang] || messages.en;
+  }
+
+  function handleSubmit(e) {
+    const form = e.currentTarget;
+    if (!form.classList.contains('mc-form')) return;
+
+    // Honeypot anti-bot check
+    const honeypot = form.querySelector('[name^="b_"]');
+    if (honeypot && honeypot.value) {
+      e.preventDefault();
+      return;
+    }
+
+    // Create hidden iframe target
+    const iframeName = 'mc_target_' + Date.now() + '_' + Math.floor(Math.random() * 1e6);
+    const iframe = document.createElement('iframe');
+    iframe.name = iframeName;
+    iframe.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;border:0;';
+    document.body.appendChild(iframe);
+
+    // Retarget form to iframe (override target="_blank")
+    const originalTarget = form.target;
+    form.target = iframeName;
+
+    // Disable submit button + show "loading" state briefly
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = '…';
+    }
+
+    // When iframe loads (after Mailchimp responds), show success
+    iframe.addEventListener('load', function onLoad() {
+      iframe.removeEventListener('load', onLoad);
+
+      showFeedback(form, 'success', getSuccessMessage(form));
+
+      // Meta Pixel — yalnizca gonderim BASARILI olduktan sonra, reset'ten once
+      if (window.TimMetaPixel) {
+        var isLead = !!(form.querySelector('textarea') || form.querySelector('[name="PHONE"]'));
+        var product = form.querySelector('[name="PRODUCT"]');
+        var source = form.querySelector('[name="SOURCE"]');
+        if (isLead) {
+          window.TimMetaPixel.track('Lead', {
+            content_name: (product && product.value) || (source && source.value) || 'form',
+            content_category: location.pathname
+          });
+        } else {
+          window.TimMetaPixel.track('CompleteRegistration', {
+            content_name: 'Newsletter',
+            content_category: location.pathname
+          });
+        }
+      }
+
+      form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+
+      // Restore original target + clean up
+      form.target = originalTarget;
+      setTimeout(function () {
+        if (iframe.parentNode) iframe.remove();
+      }, 500);
+    });
+
+    // Let the browser submit the form normally to the iframe
+    // (do NOT call e.preventDefault())
+  }
+
+  document.querySelectorAll('form.mc-form').forEach((form) => {
+    form.addEventListener('submit', handleSubmit);
+  });
+})();

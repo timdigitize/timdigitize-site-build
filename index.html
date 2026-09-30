@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tim Digitize</title>
+  <meta name="robots" content="noindex">
+  <meta name="facebook-domain-verification" content="31du2mdtzbu7afj9hg4d28kg9scfan" />
+  <link rel="canonical" href="https://timdigitize.com/en/">
+  <script>
+    (function() {
+      var supported = ["en", "tr", "es", "pt", "it", "de", "ru", "fr", "ar", "bg", "el"];
+      var stored = (function() {
+        try { return localStorage.getItem('tim_locale'); } catch(e) { return null; }
+      })();
+      var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      var pick = stored || (supported.indexOf(browser) >= 0 ? browser : 'en');
+      var to = '/';
+      try {
+        var m = /[?&]to=([^&]+)/.exec(window.location.search);
+        if (m) { var cand = decodeURIComponent(m[1]); if (/^\/[A-Za-z0-9\-_\/.?=&%]*$/.test(cand) && cand.indexOf('//') !== 0) to = cand; }
+      } catch(e) {}
+      window.location.replace('/' + pick + to);
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=/en/">
+</head>
+<body>
+  <p>Redirecting to <a href="/en/">/en/</a>…</p>
+</body>
+</html>

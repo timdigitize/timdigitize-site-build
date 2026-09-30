@@ -1,0 +1,12 @@
+(function(){'use strict';const modal=document.getElementById('catalogModal');if(!modal)return;const triggers=document.querySelectorAll('[data-catalog-trigger]');const closeEls=modal.querySelectorAll('[data-catalog-close]');const form=modal.querySelector('[data-catalog-form]');const downloadBtn=modal.querySelector('[data-catalog-download]');const states={form:modal.querySelector('[data-catalog-state="form"]'),success:modal.querySelector('[data-catalog-state="success"]'),error:modal.querySelector('[data-catalog-state="error"]'),};let lastFocused=null;function ga(name,params){if(typeof window.gtag==='function'){try{window.gtag('event',name,params||{});}catch(e){}}}
+function locale(){return document.documentElement.lang||'en';}
+function showState(name){Object.keys(states).forEach(k=>{if(states[k])states[k].hidden=(k!==name);});}
+function openModal(){lastFocused=document.activeElement;modal.hidden=false;document.body.style.overflow='hidden';showState('form');setTimeout(()=>{const first=modal.querySelector('input[name="FNAME"]');if(first)first.focus();},60);ga('catalog_modal_open',{locale:locale()});}
+function closeModal(){modal.hidden=true;document.body.style.overflow='';if(lastFocused)lastFocused.focus();}
+function validateForm(){if(!form)return false;const honeypot=form.querySelector('[name^="b_"]');if(honeypot&&honeypot.value)return false;if(!form.checkValidity()){form.reportValidity();return false;}
+return true;}
+function postToMailchimp(){try{form.submit();return true;}catch(e){console.error('Catalog form post failed:',e);return false;}}
+function handleDownloadClick(e){if(!validateForm()){e.preventDefault();return;}
+const hasCompany=!!form.querySelector('input[name="COMPANY"]').value.trim();const hasCountry=!!form.querySelector('input[name="MMERGE9"]').value.trim();postToMailchimp();ga('catalog_form_submit',{locale:locale(),has_company:hasCompany,has_country:hasCountry});ga('catalog_download',{method:'direct',locale:locale()});setTimeout(()=>showState('success'),80);}
+triggers.forEach(t=>t.addEventListener('click',openModal));closeEls.forEach(c=>c.addEventListener('click',closeModal));document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&!modal.hidden)closeModal();});if(downloadBtn){downloadBtn.addEventListener('click',handleDownloadClick);}
+const fallback=modal.querySelector('[data-catalog-fallback-link]');if(fallback){fallback.addEventListener('click',()=>{ga('catalog_download',{method:'fallback',locale:locale()});});}})();

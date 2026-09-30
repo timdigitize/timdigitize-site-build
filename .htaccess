@@ -1,0 +1,84 @@
+# Tim Digitize — .htaccess
+# Pretty URLs, language detection, HTTPS
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Drop www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# Legacy URLs from the old site -> new pages
+RewriteRule ^about\.html$ /en/about/ [L,R=301]
+RewriteRule ^contacts\.html$ /en/contact/ [L,R=301]
+RewriteRule ^detail_page_nova100\.html$ /en/products/nova-100/ [L,R=301]
+RewriteRule ^detail_page_nova110\.html$ /en/products/nova-110/ [L,R=301]
+RewriteRule ^detail_page_nova130\.html$ /en/products/nova-130/ [L,R=301]
+RewriteRule ^detail_page_nova200\.html$ /en/products/nova-200/ [L,R=301]
+RewriteRule ^detail_page_hydra500\.html$ /en/products/hydra-500/ [L,R=301]
+RewriteRule ^detail_page_hydra700\.html$ /en/products/hydra-700/ [L,R=301]
+RewriteRule ^detail_page_hydra300\.html$ /en/products/ [L,R=301]
+RewriteRule ^detail_page_aqua500\.html$ /en/products/aqua-500/ [L,R=301]
+RewriteRule ^detail_page_timapp\.html$ /en/products/tim-app/ [L,R=301]
+RewriteRule ^detail_page_ecukit\.html$ /en/products/ [L,R=301]
+RewriteRule ^static/documents/nova\-100\-manual\.pdf$ /en/products/nova-100/ [L,R=301]
+RewriteRule ^static/documents/nova\-110\-manual\.pdf$ /en/products/nova-110/ [L,R=301]
+RewriteRule ^static/documents/nova\-130\-manual\.pdf$ /en/products/nova-130/ [L,R=301]
+RewriteRule ^static/documents/nova\-200\-manual\.pdf$ /en/products/nova-200/ [L,R=301]
+RewriteRule ^(.*/)?timsantarim\.com/?$ https://timsantarim.com/ [L,R=301]
+RewriteRule ^detail_page_.*\.html$ /en/products/ [L,R=301]
+
+# Serve WebP to browsers that support it (twin file generated at build)
+AddType image/webp .webp
+RewriteCond %{HTTP_ACCEPT} image/webp
+RewriteCond %{REQUEST_FILENAME}.webp -f
+RewriteRule ^(.+)\.(png|jpe?g)$ $1.$2.webp [T=image/webp,L]
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(png|jpe?g)$">
+    Header append Vary Accept
+  </FilesMatch>
+</IfModule>
+
+# Locale-less section paths -> language picker keeping the path
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(products|blog|tools|shop|contact|about|compare|demo|case-studies|resources|privacy|terms|cookies|nova-200)(/.*)?$ /?to=/$0 [L,R=302,QSD]
+
+# Serve index.html for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(html|css|js|jpg|jpeg|png|gif|svg|webp|pdf|mp4|woff2?|ico)$ [NC]
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/plain application/xml
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header set Permissions-Policy "geolocation=(self), camera=(), microphone=(), payment=()"
+</IfModule>
+
+ErrorDocument 404 /en/404/index.html

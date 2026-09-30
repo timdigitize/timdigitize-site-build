@@ -1,0 +1,9 @@
+(function(){'use strict';var KEY='tim_fieldhub_ok';var gate=document.getElementById('fieldGate');if(!gate)return;try{if(window.localStorage&&localStorage.getItem(KEY))return;}catch(e){return;}
+function ga(name,params){if(typeof window.gtag==='function'){try{window.gtag('event',name,params||{});}catch(e){}}}
+var form=gate.querySelector('[data-gate-form]');var email=gate.querySelector('#gate-email');var errEl=gate.querySelector('#gate-error');var openedAt=Date.now();function open(){gate.hidden=false;document.body.classList.add('gate-locked');ga('field_hub_gate_view',{page_path:location.pathname});window.setTimeout(function(){email.focus();},150);}
+function unlock(){gate.hidden=true;document.body.classList.remove('gate-locked');}
+function validEmail(v){return/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}
+form.addEventListener('submit',function(e){var v=(email.value||'').trim();if(Date.now()-openedAt<3000){e.preventDefault();return;}
+if(!validEmail(v)){e.preventDefault();errEl.hidden=false;email.classList.add('gate-input-error');email.focus();return;}
+e.preventDefault();try{localStorage.setItem(KEY,v);}catch(err){}
+ga('field_hub_subscribe',{page_path:location.pathname});window.setTimeout(unlock,120);if(window.TimMailchimp){window.TimMailchimp.submit(form.getAttribute('action'),window.TimMailchimp.collect(form),function(err,data){if(err||!data)return;var already=/already subscribed/i.test(String(data.msg||''));if((data.result==='success'||already)&&window.TimMetaPixel){window.TimMetaPixel.track('CompleteRegistration',{content_name:'Field Hub Gate',content_category:location.pathname});}});}});email.addEventListener('input',function(){errEl.hidden=true;email.classList.remove('gate-input-error');});open();})();

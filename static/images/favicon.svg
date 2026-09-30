@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Dark navy rounded square -->
+  <rect width="64" height="64" rx="11" fill="#0A1628"/>
+  <!-- "tim" green wordmark — matches actual Tim logo geometry -->
+  <g fill="#00B06B">
+    <!-- t : crossbar shape with angled stem cut -->
+    <path d="M 8 14 L 18 14 L 18 22 L 15 22 L 15 46 L 21 50 L 8 50 Z"/>
+    <!-- i : dot + stem -->
+    <path d="M 24 14 L 30 14 L 30 22 L 24 22 Z"/>
+    <path d="M 24 24 L 30 24 L 30 46 L 33 50 L 24 50 Z"/>
+    <!-- m : three vertical stems with shared crossbar -->
+    <path d="M 36 24 L 56 24 L 56 50 L 50 50 L 50 30 L 47 30 L 47 50 L 41 50 L 41 30 L 39 30 L 39 50 L 36 50 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr" data-ga-id="G-BZXYRPTQZM" data-fb-id="2312239636234112">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="facebook-domain-verification" content="31du2mdtzbu7afj9hg4d28kg9scfan" />
+  <meta name="theme-color" content="#0A1628">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.instagram.com https://connect.facebook.net https://*.list-manage.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com https://img.youtube.com https://i.ytimg.com https://*.cdninstagram.com https://*.fbcdn.net https://maps.googleapis.com https://maps.gstatic.com https://*.googleusercontent.com https://*.gstatic.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com https://www.instagram.com; connect-src 'self' https://connect.facebook.net https://www.facebook.com https://api.open-meteo.com https://*.google-analytics.com https://www.googletagmanager.com https://www.google.com; form-action 'self' https://*.list-manage.com; base-uri 'self'; object-src 'none'">
+  <title>How to Calculate Overlap Loss on Your Own Fields | Tim</title>
+  <meta name="description" content="How much chemical does manual section control waste each season? A formula using field shape, boom width and headland turns, worked through on a 120-hectare farm.">
+  <meta name="keywords" content="agricultura de precisão, controlador de dose, computador de pulverizador, GNSS, controle automático de seções, agricultura digital">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt">
+  <meta property="og:title" content="How to Calculate Overlap Loss on Your Own Fields | Tim">
+  <meta property="og:description" content="How much chemical does manual section control waste each season? A formula using field shape, boom width and headland turns, worked through on a 120-hectare farm.">
+  <meta property="og:url" content="https://timdigitize.com/blog/overlap-loss-calculator/">
+  <meta property="og:image" content="https://timdigitize.com/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Tim Digitize">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calculate Overlap Loss on Your Own Fields | Tim">
+  <meta name="twitter:description" content="How much chemical does manual section control waste each season? A formula using field shape, boom width and headland turns, worked through on a 120-hectare farm.">
+
+  <link rel="canonical" href="https://timdigitize.com/pt/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="en" href="https://timdigitize.com/en/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="tr" href="https://timdigitize.com/tr/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="es" href="https://timdigitize.com/es/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="pt" href="https://timdigitize.com/pt/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="it" href="https://timdigitize.com/it/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="de" href="https://timdigitize.com/de/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://timdigitize.com/ru/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://timdigitize.com/fr/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="ar" href="https://timdigitize.com/ar/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="bg" href="https://timdigitize.com/bg/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="el" href="https://timdigitize.com/el/blog/overlap-loss-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://timdigitize.com/en/blog/overlap-loss-calculator/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/main.css?v=1790758779">
+
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico?v=1790758779">
+  <link rel="icon" type="image/svg+xml" href="/static/images/favicon.svg?v=1790758779">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32.png?v=1790758779">
+  <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon-96.png?v=1790758779">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon-192.png?v=1790758779">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png?v=1790758779">
+  <meta name="theme-color" content="#0A1628">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tim",
+    "legalName": "Tim Dijital Teknolojiler A.Ş.",
+    "url": "https://timdigitize.com",
+    "logo": "https://timdigitize.com/static/images/logo.svg",
+    "sameAs": [
+      "https://instagram.com/timsantarim",
+      "https://instagram.com/timdigitize",
+      "https://instagram.com/timdigitize_tr",
+      "https://youtube.com/@timsantarim",
+      "https://linkedin.com/company/timsan-tarim",
+      "https://timsantarim.com"
+    ],
+    "description": "Computadores de pulverização e controlo de dosagem, sistemas GNSS e aplicação inteligente — engenharia Tim para pulverizadores e distribuidores.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Esenşehir Mah., Haseki Sok., No: 20/2, Ümraniye - İstanbul / Türkiye",
+      "addressLocality": "Ümraniye, İstanbul",
+      "addressCountry": "Türkiye"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+90 216 499 71 90",
+      "email": "info@timdigitize.com",
+      "contactType": "Sales"
+    }
+  }
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Tim", "item": "https://timdigitize.com/pt/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://timdigitize.com/pt/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "How to Calculate Overlap Loss on Your Own Fields"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Calculate Overlap Loss on Your Own Fields",
+  "description": "How much chemical does manual section control waste each season? A formula using field shape, boom width and headland turns, worked through on a 120-hectare farm.",
+  "datePublished": "2026-09-09",
+  "author": {
+    "@type": "Organization",
+    "name": "Tim Engineering Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tim Digitize",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://timdigitize.com/static/images/tim-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://timdigitize.com/pt/blog/overlap-loss-calculator/"
+  },
+  "keywords": "overlap, savings, asc, nova-200, calculation",
+  "articleSection": "guides"
+}
+</script>
+</head>
+<body >
+  <a class="skip-link" href="#icerik">Ir para o conteúdo</a>
+<header class="header">
+  <div class="container header-inner">
+    <a href="/pt/" class="logo" aria-label="Tim Digitize home">
+      <img src="/static/images/tim-logo.png" alt="Tim — Digitizing Equipment" class="logo-mark" width="2560" height="1440">
+      <span class="sr-only">Tim Digitize</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <ul style="display: flex; align-items: center; gap: 1.25rem; list-style: none; flex-wrap: nowrap;">
+        <li><a href="/pt/products/" >Produtos</a></li>
+        <li><a href="/pt/shop/" >Loja</a></li>
+        <li><a href="/pt/tools/" >Central de Campo</a></li>
+        <li><a href="/pt/compare/" >Comparar</a></li>
+        <li><a href="/pt/case-studies/" >Operações de clientes</a></li>
+        <li><a href="/pt/blog/" class="active">Blog</a></li>
+        <li><a href="/pt/about/" >Sobre nós</a></li>
+        <li><a href="/pt/contact/" >Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <div class="lang-switcher">
+        <button class="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span>Português</span>
+          <svg viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li>
+            <a href="/en/blog/overlap-loss-calculator/" >
+              <span>🇬🇧</span>
+              <span>English</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tr/blog/overlap-loss-calculator/" >
+              <span>🇹🇷</span>
+              <span>Türkçe</span>
+            </a>
+          </li>
+          <li>
+            <a href="/es/blog/overlap-loss-calculator/" >
+              <span>🇪🇸</span>
+              <span>Español</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pt/blog/overlap-loss-calculator/" class="active">
+              <span>🇵🇹</span>
+              <span>Português</span>
+            </a>
+          </li>
+          <li>
+            <a href="/it/blog/overlap-loss-calculator/" >
+              <span>🇮🇹</span>
+              <span>Italiano</span>
+            </a>
+          </li>
+          <li>
+            <a href="/de/blog/overlap-loss-calculator/" >
+              <span>🇩🇪</span>
+              <span>Deutsch</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ru/blog/overlap-loss-calculator/" >
+              <span>🇷🇺</span>
+              <span>Русский</span>
+            </a>
+          </li>
+          <li>
+            <a href="/fr/blog/overlap-loss-calculator/" >
+              <span>🇫🇷</span>
+              <span>Français</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ar/blog/overlap-loss-calculator/" >
+              <span>🇸🇦</span>
+              <span>العربية</span>
+            </a>
+          </li>
+          <li>
+            <a href="/bg/blog/overlap-loss-calculator/" >
+              <span>🇧🇬</span>
+              <span>Български</span>
+            </a>
+          </li>
+          <li>
+            <a href="/el/blog/overlap-loss-calculator/" >
+              <span>🇬🇷</span>
+              <span>Ελληνικά</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <a href="/pt/contact/" class="btn btn-primary btn-sm">Contato</a>
+
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+  <main id="icerik">
+
+<section class="section">
+  <div class="container">
+    <article class="blog-post" itemscope itemtype="https://schema.org/Article">
+      <div class="blog-post-meta">
+        <span><strong>guides</strong></span>
+        <span>2026-09-09</span>
+        <span>7 min de leitura</span>
+        <span>Por <span itemprop="author">Tim Engineering Team</span></span>
+      </div>
+
+      <h1 itemprop="headline">How to Calculate Overlap Loss on Your Own Fields</h1>
+
+      <div class="blog-post-hero" style="background: linear-gradient(135deg, #00B06B 0%, #104F90 100%);">
+      </div>
+
+      <div class="blog-no-translation">
+        ℹ️ Este artigo ainda não está disponível no seu idioma. Leia em inglês abaixo.
+      </div>
+
+      <div class="blog-post-body" itemprop="articleBody">
+        <p>You have read "15 to 25 percent overlap loss" in every catalog. But how many litres, and how much money, is that on your fields? This article gives the formula and works it through on a 120-hectare farm step by step. Pen and paper are enough.</p>
+<h2>Where overlap happens</h2>
+<p>With manual section control chemical is applied twice in three places:</p>
+<ol>
+<li><strong>Headland turns:</strong> as the boom enters and leaves the edge strip the operator closes a section late or opens it early. Each turn double-sprays an area of boom width × delay distance.</li>
+<li><strong>Pass-to-pass overlap:</strong> on parallel passes the driver cannot hold the track exactly; 30 to 80 cm of overlap remains between passes. This silent loss covers the whole field.</li>
+<li><strong>Wedge-shaped parcels:</strong> on non-rectangular fields the last passes narrow; part of the boom falls on sprayed ground or the neighbour's parcel.</li>
+</ol>
+<p>Guidance removes item two; automatic section control removes items one and three.</p>
+<h2>The formula</h2>
+<p>We calculate the three items separately and add them. The data you need:</p>
+<ul>
+<li><strong>A:</strong> field area (ha)</li>
+<li><strong>B:</strong> boom width (m)</li>
+<li><strong>L:</strong> average pass length (m)</li>
+<li><strong>g:</strong> overlap per pass (m), typically 0.5 m when driving without GPS</li>
+<li><strong>d:</strong> delay distance at the turn (m), typically 3 m with manual switching</li>
+<li><strong>k:</strong> wedge/irregularity share, 2 percent on rectangular fields, 6 to 10 percent on irregular ones</li>
+</ul>
+<p><strong>1. Pass overlap (ha):</strong> number of passes ≈ (A × 10,000) / (B × L). Each pass double-sprays g × L m².<br />
+Loss₁ = passes × g × L / 10,000 = A × g / B</p>
+<p><strong>2. Turn overlap (ha):</strong> at both ends of each pass B × d m² is double-sprayed.<br />
+Loss₂ = passes × 2 × B × d / 10,000 = A × 2d / L</p>
+<p><strong>3. Wedge share (ha):</strong> Loss₃ = A × k</p>
+<p>Total overlap rate = (Loss₁ + Loss₂ + Loss₃) / A</p>
+<h2>A 120-hectare example</h2>
+<p>A wheat and sunflower rotation, 24 m boom, parcels averaging 400 m long, half of the fields irregular.</p>
+<ul>
+<li>A = 120 ha, B = 24 m, L = 400 m, g = 0.5 m, d = 3 m, k = 5 percent</li>
+</ul>
+<p><strong>Loss₁</strong> = 120 × 0.5 / 24 = <strong>2.5 ha</strong><br />
+<strong>Loss₂</strong> = 120 × 6 / 400 = <strong>1.8 ha</strong><br />
+<strong>Loss₃</strong> = 120 × 0.05 = <strong>6.0 ha</strong></p>
+<p>Total = 10.3 ha, so <strong>8.6 percent</strong> of the seasonal application area is sprayed twice. That may look modest, but with three applications per season (herbicide, fungicide, insecticide) it is 31 hectares of chemical wasted.</p>
+<p>At a chemical cost of 40 € per hectare: 31 × 40 = <strong>1,240 € per year</strong>, before counting phytotoxicity on double-sprayed strips and the extra diesel.</p>
+<p>On farms with many irregular parcels, k = 10 percent and g = 0.8 m push the same calculation to 14 percent, which is where the catalog figures come from.</p>
+<h2>Which technology removes which item?</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Guidance only (Nova 2N)</th>
+<th>Guidance + auto section (Nova 200)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass overlap</td>
+<td>g 0.5 → 0.15 m: <strong>down 70%</strong></td>
+<td>same</td>
+</tr>
+<tr>
+<td>Turn overlap</td>
+<td>unchanged</td>
+<td>d 3 → 0.3 m: <strong>down 90%</strong></td>
+</tr>
+<tr>
+<td>Wedge share</td>
+<td>unchanged</td>
+<td>sections close at the boundary: <strong>down 85%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>For the example farm:</p>
+<ul>
+<li>With <a href="/en/products/nova-2n/">Nova 2N</a> the loss drops from 10.3 to 8.5 ha (about 220 € a year)</li>
+<li>With <a href="/en/products/nova-200/">Nova 200</a> the loss drops from 10.3 to 1.8 ha (about <strong>1,020 €</strong> a year)</li>
+</ul>
+<p>So automatic section control pays for itself within a few seasons on this farm, faster on booms wider than 24 m and on more irregular land, and much faster where chemical costs per hectare are higher than in this conservative example.</p>
+<h2>How to find your own numbers</h2>
+<ul>
+<li><strong>Boom width and pass length:</strong> from the machine and the field register.</li>
+<li><strong>Overlap (g):</strong> measure the gap between wheel tracks of two passes with a tape; 0.4 to 0.8 m is normal without GPS.</li>
+<li><strong>Delay (d):</strong> mark where you close the section at the headland and where the edge strip actually ends; the distance between them.</li>
+<li><strong>Nozzle output and target rate:</strong> hitting the right rate is the precondition for any loss calculation; check it with the <a href="/en/tools/nozzle/">Nozzle Calculator</a>.</li>
+<li><strong>Recorded covered area:</strong> Nova computers show the real covered area when a job ends. The difference to the registered field area is your true overlap rate. <a href="/en/products/tim-app/">TIM APP</a> reports that difference for every job.</li>
+</ul>
+<p>We explained how automatic section control works in <a href="/en/blog/auto-section-control-savings/">this article</a>. Whether it can be fitted to your sprayer is covered in the <a href="/en/blog/sprayer-gps-retrofit/">GPS retrofit guide</a>.</p>
+      </div>
+
+      <div style="margin-top: var(--sp-12); padding-top: var(--sp-6); border-top: 1px solid var(--color-divider);">
+        <p class="eyebrow">Tags</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--sp-3);">
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; padding: 4px 12px; background: var(--color-bg-alt); border-radius: var(--radius-full); color: var(--color-muted);">#overlap</span>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; padding: 4px 12px; background: var(--color-bg-alt); border-radius: var(--radius-full); color: var(--color-muted);">#savings</span>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; padding: 4px 12px; background: var(--color-bg-alt); border-radius: var(--radius-full); color: var(--color-muted);">#asc</span>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; padding: 4px 12px; background: var(--color-bg-alt); border-radius: var(--radius-full); color: var(--color-muted);">#nova-200</span>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; padding: 4px 12px; background: var(--color-bg-alt); border-radius: var(--radius-full); color: var(--color-muted);">#calculation</span>
+        </div>
+      </div>
+
+      <a href="/pt/products/nova-200/" class="tool-crosssell" style="margin-top: var(--sp-12);">
+        <div class="tool-crosssell-image">
+          <img src="/static/images/products/nova-200.png" alt="Nova 200" loading="lazy">
+        </div>
+        <div class="tool-crosssell-body">
+          <p class="eyebrow">Produtos relacionados</p>
+          <h3>Nova 200</h3>
+          <p>Nosso carro-chefe: Controle Automático de Seções com GNSS RTK integrado, 7 seções e mapeamento de limites de campo.</p>
+          <span class="card-action">Ver produto</span>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
+
+<section class="section" style="background: var(--color-bg-alt);">
+  <div class="container">
+    <h2 style="margin-bottom: var(--sp-8);">Artigos relacionados</h2>
+    <div class="blog-grid">
+      <a href="/pt/blog/sprayer-gps-retrofit/" class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #104F90 0%, #0013FF 100%);"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">guides</span>
+            <span>2026-09-09</span>
+          </div>
+          <h3 class="blog-card-title">Can I Add GPS to My Sprayer? A Retrofit Guide</h3>
+          <p class="blog-card-excerpt">GPS guidance and automatic section control can be fitted to an existing mechanical sprayer. Which machines qualify, what parts are needed and how the one-day installation runs.</p>
+          <span class="blog-card-action">Ler artigo</span>
+        </div>
+      </a>
+      <a href="/pt/blog/auto-section-control-savings/" class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #104F90 0%, #00B06B 100%);"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">technology</span>
+            <span>2026-05-12</span>
+          </div>
+          <h3 class="blog-card-title">Como o Controle Automático de Seções Entrega 30% de Economia em Químicos</h3>
+          <p class="blog-card-excerpt">Em campos irregulares, a gestão manual de seções desperdiça até um terço de cada carga. Veja como o ASC elimina essa perda — medido, não estimado.</p>
+          <span class="blog-card-action">Ler artigo</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <h2>Pronto para digitalizar sua operação?</h2>
+    <p>Fale com a nossa equipa agronómica sobre a sua operação — respondemos num dia útil.</p>
+    <a href="/pt/contact/" class="btn btn-accent btn-lg btn-arrow">Contacte-nos</a>
+  </div>
+</section>
+
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/static/images/tim-logo-green.png" alt="Tim" width="2560" height="1440" style="height: 56px; width: auto; margin-bottom: 1rem;">
+        <p>Agricultura digital, com engenharia.</p>
+
+        <h4>Fique por dentro</h4>
+        <p style="font-size: 0.875rem; margin-bottom: 1rem;">Atualizações trimestrais sobre novos produtos, firmware e casos de estudo. Sem spam.</p>
+        <form class="footer-newsletter mc-form" action="https://timdigitize.us22.list-manage.com/subscribe/post?u=a1437c828d79c03443d33ae10&amp;id=aceeeb69fb&amp;f_id=008dc2e1f0" method="POST" target="_blank" novalidate>
+          <input type="email" name="EMAIL" placeholder="seu@email.com" required aria-label="Email">
+          <input type="hidden" name="MMERGE14" value="newsletter-footer">
+          <div style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;" aria-hidden="true">
+            <input type="text" name="b_a1437c828d79c03443d33ae10_aceeeb69fb" tabindex="-1" value="">
+          </div>
+          <button type="submit" name="subscribe">Inscrever-se</button>
+        </form>
+
+        <div class="footer-social">
+<a href="https://instagram.com/timdigitize" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://youtube.com/timsantarim" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/timsan-tarim" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="/pt/products/nova-100/">Nova 100</a></li>
+          <li><a href="/pt/products/nova-110/">Nova 110</a></li>
+          <li><a href="/pt/products/nova-130/">Nova 130</a></li>
+          <li><a href="/pt/products/nova-200/">Nova 200</a></li>
+          <li><a href="/pt/products/nova-210/">Nova 210</a></li>
+          <li><a href="/pt/products/nova-2n/">Nova 2N</a></li>
+          <li><a href="/pt/products/">Ver todos</a></li>
+          <li><a href="/pt/shop/">Loja →</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/pt/about/">Sobre nós</a></li>
+          <li><a href="/pt/case-studies/">Operações de clientes</a></li>
+          <li><a href="/pt/contact/">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="/pt/tools/">Central de Campo</a></li>
+          <li><a href="/pt/blog/">Blog</a></li>
+          <li><a href="/pt/tools/#resources">Recursos</a></li>
+          <li><a href="/pt/compare/">Comparar</a></li>
+          <li><a href="https://timsantarim.com" target="_blank" rel="noopener">timsantarim.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        <p>© <span id="current-year">2026</span> Tim Dijital Teknolojiler A.Ş. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="/pt/privacy/">Privacidade</a>
+        <a href="/pt/terms/">Termos</a>
+        <a href="/pt/cookies/">Cookies</a>
+      </div>
+    </div>
+  </div>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</footer><nav class="mobile-nav" aria-label="Mobile">
+  <ul>
+    <li><a href="/pt/products/">Produtos</a></li>
+    <li><a href="/pt/shop/">Loja</a></li>
+    <li><a href="/pt/tools/">Central de Campo</a></li>
+    <li><a href="/pt/compare/">Comparar</a></li>
+    <li><a href="/pt/case-studies/">Operações de clientes</a></li>
+    <li><a href="/pt/blog/">Blog</a></li>
+    <li><a href="/pt/about/">Sobre nós</a></li>
+    <li><a href="/pt/contact/">Contato</a></li>
+  </ul>
+  <a href="/pt/contact/" class="btn btn-accent btn-lg">Contato</a>
+</nav><a
+  href="https://wa.me/905331580055?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20produtos%20Tim."
+  class="whatsapp-fab"
+  aria-label="Fale conosco no WhatsApp"
+  target="_blank"
+  rel="noopener"
+  data-tooltip="Resposta no mesmo dia · WhatsApp"
+  data-fb-event="Contact"
+  data-fb-label="WhatsApp FAB">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/>
+  </svg>
+</a>
+<div id="cookie-consent" class="cookie-consent" hidden role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-message">
+  <div class="container cookie-consent-inner">
+    <div class="cookie-consent-text">
+      <strong id="cookie-consent-title">Usamos cookies</strong>
+      <p id="cookie-consent-message">
+        Usamos cookies funcionais para o site funcionar e analítica anônima para melhorá-lo. Aceite tudo, só essenciais, ou personalize.
+        <a href="/pt/cookies/">Saber mais</a>
+      </p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-action="essential">Só essenciais</button>
+      <button type="button" class="btn btn-primary btn-sm" data-cookie-action="all">Aceitar tudo</button>
+    </div>
+  </div>
+</div>
+  <script src="/static/js/main.js?v=1790758779" defer></script>
+  <script src="/static/js/mc-forms.js?v=1790758779" defer></script>
+  <script src="/static/js/wa-ref.js?v=1790758779" defer></script>
+  <script src="/static/js/meta-pixel.js?v=1790758779" defer></script>
+  <script src="/static/js/cookie-consent.js?v=1790758779" defer></script>
+  <script src="/static/js/youtube-lite.js?v=1790758779" defer></script>
+  <script src="/static/js/catalog-modal.js?v=1790758779" defer></script>
+</body>
+</html>
